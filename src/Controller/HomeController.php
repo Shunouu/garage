@@ -11,37 +11,12 @@ class HomeController extends AbstractController
     public function accueil(): Response
     {
         $accueil = [
-          'name'=>'Agence Web',
-          'description' =>'Voyager comme vous etes',
+          'name'=>'Garage',
+          'description' =>'Vente de Voiture',
           'valeur' => 'Transparent , Sécurité , Accompagnement'
         ];
-        return $this->render('base.html.twig', [
+        return $this->render('accueil.html.twig', [
 
-        ]);
-    }
-
-    #[Route('/destination')]
-    public function destination(): Response
-    {
-        $destination = [
-            'name' => 'Paris',
-            'description' => "C'est beau",
-        ];
-
-        return $this->render('destination.html.twig', [
-            'destination' => $destination,
-        ]);
-    }
-    #[Route('/base')]
-    public function base(): Response
-    {
-        $destination = [
-            'name' => 'Paris',
-            'description' => "C'est beau",
-        ];
-
-        return $this->render('base.html.twig', [
-            'destination' => $destination,
         ]);
     }
 }

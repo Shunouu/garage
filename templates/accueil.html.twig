@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Garage V Parrot{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+        <link rel ="stylesheet" href ="{{ asset('css/style.css')}}">
+         <link rel ="stylesheet" href ="{{ asset('css/review.css')}}">
+        {% block stylesheets %}
+        {% endblock %}
+    <header>
+        <div class="header-logo">
+            <img src="{{ asset('image/garagelogo.png') }}" alt="Logo Garage V. Parrot">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#services">Nos Services</a></li>
+                <li><a href="#vehicles">Véhicules d'occasion</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="{{ '/login'}}">Connexion</a></li>
+                <li><a href="{{'/register'}}">Inscription</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Le Garage V. Parrot</h1>
+            <p>Spécialiste dans la réparation automobile et la vente de véhicules d'occasion à Toulouse.</p>
+            <a href="#vehicles" class="btn">Nos  Véhicules</a>
+        </div>
+    </section>
+    <section class="garage-services" id="services">
+        <div class="services-header">
+            <h1>Entretien et Réparation de Votre Véhicule</h1>
+            <p>
+                Faites confiance à notre expertise pour maintenir <br>votre véhicule en parfait état.<br>
+                De l'entretien régulier à la réparation en profondeur,<br> nous avons tout ce qu'il faut pour vous satisfaire !
+            </p>
+            <a href="#services" class="btn-services">Découvrez nos services</a>
+        </div>
+
+        <div class="services-gallery">
+            <h2>Nos Prestations en Détail</h2>
+            <div class="services-cards">
+                <div class="service-card">
+                    <img src="{{ asset('image/Réparation_carrosserie.jpg') }}" alt="Réparation de carrosserie">
+                    <h3>Réparation de Carrosserie</h3>
+                    <p>Redonnez une nouvelle vie à votre véhicule avec nos services de réparation de carrosserie.</p>
+                </div>
+                <div class="service-card">
+                    <img src="{{ asset('image/Mécanique_entretien.jpg') }}" alt="Entretien Mécanique">
+                    <h3>Entretien Mécanique</h3>
+                    <p>Optimisez les performances de votre voiture avec notre expertise en mécanique.</p>
+                </div>
+                <div class="service-card">
+                    <img src="{{ asset('image/controle_technique.jpg') }}" alt="Contrôle Technique">
+                    <h3>Contrôle Technique</h3>
+                    <p>Préparez votre véhicule pour le contrôle technique grâce à nos vérifications approfondies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="vehicles">
+        <h2>Nos Véhicules d'occasion</h2>
+        <div class="vehicle-item">
+            <img src="{{ asset('image/Mini.jpg') }}" alt="Mini Cooper">
+            <h3>Mini Cooper  2015</h3>
+            <p>Équipée d’un intérieur raffiné avec des finitions modernes, elle offre une conduite dynamique et précise, idéale pour les trajets urbains</p>
+        </div>
+        <div class="vehicle-item">
+            <img src="{{ asset('image/Mercedes.jpg') }}" alt="Mercedes">
+            <h3>Mercedes-AMG GLE 53 2024</h3>
+            <p>Équipée d'un moteur hybride turbo 6 cylindres offrant une accélération rapide et une conduite sportive</p>
+        </div>
+    </section>
+
+     <div class="container">
+      <h1>Laissez un avis</h1>
+      <form id="reviewForm">
+        <label for="name">Quel est votre nom?</label>
+        <input
+          type="text"
+          id="name"
+          required
+          placeholder="Ex : John Marie"
+          maxlength="50"
+        />
+
+        <label for="rating">Notes-nous !</label>
+        <select id="rating" required>
+          <option value=""></option>
+          <option value="⭐">⭐</option>
+          <option value="⭐ ⭐">⭐ ⭐</option>
+          <option value="⭐ ⭐ ⭐">⭐ ⭐ ⭐</option>
+          <option value="⭐ ⭐ ⭐ ⭐">⭐ ⭐ ⭐ ⭐</option>
+          <option value="⭐ ⭐ ⭐ ⭐ ⭐">⭐ ⭐ ⭐ ⭐ ⭐</option>
+        </select>
+
+        <label for="testimonial">Témoignez</label>
+        <textarea
+          id="testimonial"
+          required
+          placeholder="Je suis ravi d'avoir fait affaire avec eux!"
+          maxlength="200"
+        ></textarea>
+
+        <button type="submit">Envoyer</button>
+      </form>
+
+      <h2>Nos avis récents</h2>
+      <div id="reviews"></div>
+    </div>
+    <footer>
+    <div class="horaires">
+      <div class="horaires_presentation">
+        <h1>Horaires</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam ex assumenda cupiditate eligendi nostrum perferendis amet libero dicta veniam. Aperiam dignissimos distinctio velit sit commodi a quaerat optio quisquam atque.</p>
+      </div>
+      <div class="horaires_jours">
+        <h3>Horaires d'ouvertures</h3>
+        <div class="days">
+          <p>Lundi</p>
+          <p>8h - 18h</p>
+        </div>
+        <div class="days">
+          <p>Mardi</p>
+          <p>8h - 18h</p>
+        </div>
+        <div class="days">
+          <p>Mercredi</p>
+          <p>8h - 18h</p>
+        </div>
+        <div class="days">
+          <p>Jeudi</p>
+          <p>8h - 18h</p>
+        </div>
+        <div class="days">
+          <p>Vendredi</p>
+          <p>8h - 18h</p>
+        </div>
+        <div class="days">
+          <p>Samedi</p>
+          <p>8h - 12h</p>
+        </div>
+        <div class="days">
+          <p>Dimanche</p>
+          <p>Fermé</p>
+        </div>
+      </div>
+    </div>
+    <section id="contact">
+        <h2>Contactez-nous</h2>
+        <p>Garage V. Parrot, Toulouse</p>
+        <p>Téléphone : 01 23 45 67 89</p>
+        <p>Email : contact@garagevparrot.com</p>
+    </section>
+    
+    <!-- Section de Copyright -->
+    <div class="copyright">
+        <p>&copy; 2024 Garage V. Parrot. Tous droits réservés.</p>
+    </div>
+</footer>
+
+<script src="{{ asset('js/script.js') }}"></script>
+
+</body>
+</html>
