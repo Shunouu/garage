@@ -11,18 +11,17 @@ body {
   background-color: #f4f4f4;
 }
 
-/* Barre de navigation plus compacte avec hauteur réduite */
 header {
   background-color: #333;
   color: #fff;
-  padding: 5px 10px; /* Réduction du padding vertical */
+  padding: 5px 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 header .header-logo img {
-  max-width: 100px; /* Diminution de la taille du logo */
+  max-width: 100px;
 }
 
 nav ul {
@@ -31,13 +30,13 @@ nav ul {
 }
 
 nav ul li {
-  margin-right: 10px; /* Réduction de l'espacement entre les liens */
+  margin-right: 10px;
 }
 
 nav ul li a {
   color: #fff;
   text-decoration: none;
-  padding: 5px 10px; /* Réduction du padding des liens */
+  padding: 5px 10px;
   transition: background-color 0.3s ease;
 }
 
@@ -128,9 +127,11 @@ p {
   background-color: #f4f4f4;
   padding: 60px 20px;
 }
+
 #vehicles h2 {
-  color:#333;
+  color: #333;
 }
+
 .vehicle-item {
   display: inline-block;
   background-color: #fff;
@@ -175,18 +176,31 @@ p {
   font-size: 1.2em;
 }
 
+footer p {
+  font-size: 0.9em;
+}
+
 footer {
   background-color: #333;
   color: #bbb;
   padding: 20px 0;
   text-align: center;
+  margin-bottom: 0;
 }
 
-footer p {
+footer .copyright {
+  padding: 10px 0;
+  background-color: #222;
+  color: #bbb;
   font-size: 0.9em;
+  text-align: center;
+  margin: 0;
 }
 
-/* Nouvelle section pour Entretien et Réparation de véhicules */
+footer .copyright p {
+  margin: 0;
+}
+
 .garage-services {
   padding: 50px 0;
   text-align: center;
@@ -257,7 +271,6 @@ footer p {
   color: #333;
 }
 
-/* Responsivité */
 @media (max-width: 768px) {
   nav ul {
     flex-direction: column;
