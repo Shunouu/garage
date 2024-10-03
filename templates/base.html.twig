@@ -7,11 +7,81 @@
         {% block stylesheets %}
         {% endblock %}
 
-        {% block javascripts %}
-            {% block importmap %}{{ importmap('app') }}{% endblock %}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+    <header>
+        <div class="header-logo">
+            <img src="{{ asset('image/garagelogo.png') }}" alt="Logo Garage V. Parrot">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#presentation">Présentation</a></li>
+                <li><a href="#services">Nos Services</a></li>
+                <li><a href="#vehicles">Véhicules d'occasion</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Le Garage V. Parrot</h1>
+            <p>Spécialiste dans la réparation automobile et la vente de véhicules d'occasion à Toulouse.</p>
+            <a href="#vehicles" class="btn">Nos Véhicules</a>
+        </div>
+    </section>
+
+    <!-- Nouvelle section pour remplacer "Voyages 2025" -->
+    <section class="garage-services">
+        <div class="services-header">
+            <h1>Entretien et Réparation de Votre Véhicule</h1>
+            <p>
+                Faites confiance à notre expertise pour maintenir <br>votre véhicule en parfait état.<br>
+                De l'entretien régulier à la réparation en profondeur,<br> nous avons tout ce qu'il faut pour vous satisfaire !
+            </p>
+            <a href="#services" class="btn-services">Découvrez nos services</a>
+        </div>
+
+        <div class="services-gallery">
+            <h2>Nos Prestations en Détail</h2>
+            <div class="services-cards">
+                <div class="service-card">
+                    <img src="{{ asset('images/reparation-carrosserie.jpg') }}" alt="Réparation de carrosserie">
+                    <h3>Réparation de Carrosserie</h3>
+                    <p>Redonnez une nouvelle vie à votre véhicule avec nos services de réparation de carrosserie.</p>
+                </div>
+                <div class="service-card">
+                    <img src="{{ asset('images/entretien-mecanique.jpg') }}" alt="Entretien Mécanique">
+                    <h3>Entretien Mécanique</h3>
+                    <p>Optimisez les performances de votre voiture avec notre expertise en mécanique.</p>
+                </div>
+                <div class="service-card">
+                    <img src="{{ asset('images/controle-technique.jpg') }}" alt="Contrôle Technique">
+                    <h3>Contrôle Technique</h3>
+                    <p>Préparez votre véhicule pour le contrôle technique grâce à nos vérifications approfondies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="vehicles">
+        <h2>Nos Véhicules d'occasion</h2>
+        <div class="vehicle-item">
+            <img src="{{ asset('images/Mini.jpg') }}" alt="Mini Cooper">
+            <h3>Mini Cooper</h3>
+            <p>Mini Cooper, 2015</p>
+        </div>
+        <div class="vehicle-item">
+            <img src="{{ asset('images/Mercedes.jpg') }}" alt="Mercedes">
+            <h3>Mercedes-AMG GLE 53 SUV</h3>
+            <p>Mercedes-AMG GLE 53 SUV, 2024</p>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <h2>Contactez-nous</h2>
+        <p>Garage V. Parrot, Toulouse</p>
+        <p>Téléphone : 01 23 45 67 89</p>
+        <p>Email : contact@garagevparrot.com</p>
+    </footer>
+
+</body>
 </html>
