@@ -125,10 +125,12 @@ p {
 }
 
 #vehicles {
-  background-color: #e6e6e6;
+  background-color: #f4f4f4;
   padding: 60px 20px;
 }
-
+#vehicles h2 {
+  color:#333;
+}
 .vehicle-item {
   display: inline-block;
   background-color: #fff;
