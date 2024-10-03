@@ -5,6 +5,7 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
         <link rel ="stylesheet" href ="{{ asset('css/style.css')}}">
+         <link rel ="stylesheet" href ="{{ asset('css/review.css')}}">
         {% block stylesheets %}
         {% endblock %}
     <header>
@@ -76,12 +77,89 @@
         </div>
     </section>
 
+     <div class="container">
+      <h1>Laissez un avis</h1>
+      <form id="reviewForm">
+        <label for="name">Quel est votre nom?</label>
+        <input
+          type="text"
+          id="name"
+          required
+          placeholder="Ex : John Marie"
+          maxlength="50"
+        />
+
+        <label for="rating">Notes-nous !</label>
+        <select id="rating" required>
+          <option value=""></option>
+          <option value="⭐">⭐</option>
+          <option value="⭐ ⭐">⭐ ⭐</option>
+          <option value="⭐ ⭐ ⭐">⭐ ⭐ ⭐</option>
+          <option value="⭐ ⭐ ⭐ ⭐">⭐ ⭐ ⭐ ⭐</option>
+          <option value="⭐ ⭐ ⭐ ⭐ ⭐">⭐ ⭐ ⭐ ⭐ ⭐</option>
+        </select>
+
+        <label for="testimonial">Témoignez</label>
+        <textarea
+          id="testimonial"
+          required
+          placeholder="Je suis ravi d'avoir fait affaire avec eux!"
+          maxlength="200"
+        ></textarea>
+
+        <button type="submit">Envoyer</button>
+      </form>
+
+      <h2>Nos avis récents</h2>
+      <div id="reviews"></div>
+    </div>
+
+    <div class="horaires">
+      <div class="horaires_presentation">
+        <h1>Horaires</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam ex assumenda cupiditate eligendi nostrum perferendis amet libero dicta veniam. Aperiam dignissimos distinctio velit sit commodi a quaerat optio quisquam atque.</p>
+      </div>
+      <div class="horaires_jours">
+        <h3>Horaires d'ouvertures</h3>
+        <div class="days">
+          <p>Lundi</p>
+          <p>8h - 18h</p>
+        </div>
+        <div class="days">
+          <p>Mardi</p>
+          <p>8h - 18h</p>
+        </div>
+        <div class="days">
+          <p>Mercredi</p>
+          <p>8h - 18h</p>
+        </div>
+        <div class="days">
+          <p>Jeudi</p>
+          <p>8h - 18h</p>
+        </div>
+        <div class="days">
+          <p>Vendredi</p>
+          <p>8h - 18h</p>
+        </div>
+        <div class="days">
+          <p>Samedi</p>
+          <p>8h - 12h</p>
+          
+        </div>
+        <div class="days">
+
+          <p>Dimanche</p>
+          <p>Fermé</p>
+        </div>
+    </div>
+
     <footer id="contact">
         <h2>Contactez-nous</h2>
         <p>Garage V. Parrot, Toulouse</p>
         <p>Téléphone : 01 23 45 67 89</p>
         <p>Email : contact@garagevparrot.com</p>
     </footer>
-
+<script src="{{ asset('js/script.js') }}"></script>
+    </body>
 </body>
 </html>

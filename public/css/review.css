@@ -1,0 +1,102 @@
+.container {
+  max-width: 600px;
+  margin: auto;
+  background: #666;
+
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-color: #ff9800;
+  border-style: solid;
+  color: white;
+}
+
+h1,
+h2 {
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 10px;
+}
+
+input,
+select,
+textarea {
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ff9800;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #e18700;
+  transition-duration: 300ms;
+}
+
+button:active {
+  background-color: #c77700;
+  transition-duration: 100ms;
+}
+
+button:focus {
+  outline: none;
+}
+
+.review {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.horaires {
+  width: 100%;
+  display: flex;
+  margin-top: 10%;
+  background-color: #333;
+}
+
+.horaires p,
+h1,
+h2,
+h3 {
+  color: white;
+}
+.horaires_presentation {
+  width: 30%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.horaires_presentation p {
+  margin-top: 10%;
+  font-size: 20px;
+}
+.horaires_jours {
+  width: 30%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.days {
+  display: flex;
+  justify-content: space-between;
+}
