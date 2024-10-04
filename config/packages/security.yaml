@@ -14,14 +14,17 @@ security:
             provider: app_user_provider
             lazy: true
             form_login:
-                login_path: app_login  # Modifié ici
-                check_path: app_login  # Modifié ici
+                login_path: app_login 
+                check_path: app_login  
                 enable_csrf: true
                 csrf_token_id: authenticate
+                username_parameter: email
+                password_parameter: password
             logout:
-                path: app_logout  # Utilise le nom de route défini
+                path: app_logout 
                 target: /
-            entry_point: form_login  # Spécifiez le point d'entrée ici
+            entry_point: form_login 
 
     access_control:
+        - { path: ^/admin, roles: ROLE_ADMIN }
         - { path: ^/employee, roles: ROLE_EMPLOYEE }

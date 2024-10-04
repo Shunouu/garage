@@ -22,11 +22,14 @@ class AdminUserController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            // Hacher le mot de passe avant de sauvegarder l'utilisateur
+            $hashedPassword = $passwordHasher->hashPassword($employee, $employee->getPassword());
+            $employee->setPassword($hashedPassword);
+
             $employee->setRoles(['ROLE_EMPLOYEE']);
             $em->persist($employee);
             $em->flush();
-
-            return $this->redirectToRoute('accueil.html.twig');
+            return $this->redirectToRoute('app_homepage');
         }
 
         return $this->render('admin/create_employee.html.twig', [
@@ -34,21 +37,21 @@ class AdminUserController extends AbstractController
         ]);
     }
 
-
     #[Route('/admin/user/create', name: 'admin_user_create')]
-    public function createAdminUser(EntityManagerInterface $em): Response
+    public function createAdminUser(EntityManagerInterface $em, UserPasswordHasherInterface $passwordHasher): Response
     {
         $user = new User();
-
     
-        $user->setEmail('admin@example.com'); 
-        $user->setPassword('admin_password'); 
-        $user->setRoles(['ROLE_ADMIN']); 
+        $user->setEmail('admin1@gmail.com'); 
+        $user->setRoles(['ROLE_ADMIN']);
 
+        // Hacher le mot de passe avant de l'enregistrer
+        $hashedPassword = $passwordHasher->hashPassword($user, '123');
+        $user->setPassword($hashedPassword);
     
         $em->persist($user);
         $em->flush();
 
-        return new Response('Le compte Admin!');
+        return new Response('Le compte Admin a été créé avec succès!');
     }
 }

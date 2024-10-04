@@ -7,7 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class HomeController extends AbstractController 
 {
-    #[Route('/')]
+    #[Route('/', name : 'app_homepage')]
     public function accueil(): Response
     {
         $accueil = [
