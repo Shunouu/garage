@@ -22,7 +22,6 @@ class AdminUserController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            // Hacher le mot de passe avant de sauvegarder l'utilisateur
             $hashedPassword = $passwordHasher->hashPassword($employee, $employee->getPassword());
             $employee->setPassword($hashedPassword);
 
@@ -45,7 +44,6 @@ class AdminUserController extends AbstractController
         $user->setEmail('admin1@gmail.com'); 
         $user->setRoles(['ROLE_ADMIN']);
 
-        // Hacher le mot de passe avant de l'enregistrer
         $hashedPassword = $passwordHasher->hashPassword($user, '123');
         $user->setPassword($hashedPassword);
     
