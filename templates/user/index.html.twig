@@ -2,7 +2,85 @@
 
 {% block title %}User index{% endblock %}
 
+{% block stylesheets %}
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .table thead {
+            background-color: #007bff;
+            color: #fff;
+        }
+        .table th, .table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #dee2e6;
+        }
+        .table tr:hover {
+            background-color: #f1f1f1; /* Change color on row hover */
+        }
+        .table a {
+            color: #007bff;
+            text-decoration: none;
+            padding: 4px 8px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .table a:hover {
+            background-color: #e2e6ea;
+        }
+        .no-records {
+            text-align: center;
+            font-style: italic;
+            color: #777;
+        }
+        .create-new {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .create-new:hover {
+            background-color: #218838; 
+        }
+        .home-button {
+            display: inline-block;
+            margin: 20px 0; /* Espacement au-dessus et en dessous */
+            padding: 10px 15px;
+            background-color: #6c757d; /* Couleur de fond du bouton */
+            color: #fff; /* Couleur du texte */
+            text-decoration: none; /* Pas de soulignement */
+            border-radius: 5px; /* Coins arrondis */
+            transition: background-color 0.3s; /* Effet de transition */
+        }
+        .home-button:hover {
+            background-color: #5a6268;
+        }
+    </style>
+{% endblock %}
+
 {% block body %}
+    <a href="{{ path('app_homepage') }}" class="home-button">Retour à l'Accueil</a>
+
     <h1>User index</h1>
 
     <table class="table">
@@ -12,7 +90,7 @@
                 <th>Email</th>
                 <th>Roles</th>
                 <th>Password</th>
-                <th>actions</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -23,17 +101,17 @@
                 <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
                 <td>{{ user.password }}</td>
                 <td>
-                    <a href="{{ path('app_user_show', {'id': user.id}) }}">show</a>
-                    <a href="{{ path('app_user_edit', {'id': user.id}) }}">edit</a>
+                    <a href="{{ path('app_user_show', {'id': user.id}) }}">Show</a>
+                    <a href="{{ path('app_user_edit', {'id': user.id}) }}">Edit</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="5">no records found</td>
+                <td colspan="5" class="no-records">No records found</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('app_user_new') }}">Create new</a>
+    <a href="{{ path('admin_employee_create') }}" class="create-new">Crée un nouveaux Employé</a>
 {% endblock %}

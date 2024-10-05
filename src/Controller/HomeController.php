@@ -19,4 +19,16 @@ class HomeController extends AbstractController
 
         ]);
     }
+    #[Route('/client', name : 'app_client')]
+    public function client(): Response
+    {
+        $accueil = [
+          'name'=>'Garage',
+          'description' =>'Vente de Voiture',
+          'valeur' => 'Transparent , Sécurité , Accompagnement'
+        ];
+        return $this->render('client.html.twig', [
+
+        ]);
+    }
 }

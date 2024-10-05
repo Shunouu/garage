@@ -26,5 +26,6 @@ security:
             entry_point: form_login 
 
     access_control:
+        - { path: ^/user, roles: ROLE_ADMIN }
         - { path: ^/admin, roles: ROLE_ADMIN }
         - { path: ^/employee, roles: ROLE_EMPLOYEE }
